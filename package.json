@@ -1,0 +1,27 @@
+{
+  "name": "aimg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generate images with AI models on Replicate and save them to your computer.",
+  "main": "index.js",
+  "bin": {
+  "aimg": "./index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "standard --fix",
+    "test": "standard"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "download": "^8.0.0",
+    "minimist": "^1.2.8",
+    "promptmaker": "^1.1.0",
+    "replicate": "^0.30.2",
+    "transliteration": "^2.3.5"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}
