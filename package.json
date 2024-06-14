@@ -2,7 +2,7 @@
   "name": "aimg",
   "version": "1.0.0",
   "private": true,
-  "description": "Generate images with AI models on Replicate and save them to your computer.",
+  "description": "A Node.js CLI for generating AI images with Replicate and saving them to disk.",
   "main": "index.js",
   "bin": {
   "aimg": "./index.js"

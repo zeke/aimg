@@ -1,6 +1,6 @@
 # aimg
 
-A tiny Node.js CLI for generating multiple images at once using Replicate and saving them to disk.
+A Node.js CLI for generating AI images with Replicate and saving them to disk.
 
 ## Features
 
