@@ -2,6 +2,8 @@
 
 A Node.js CLI for generating AI images with Replicate and saving them to disk.
 
+![screenshot](https://github.com/replicate/cog/assets/2289/f6ad8d6b-cc9c-4b07-a241-7766cd232d6f)
+
 ## Features
 
 - Easy to install and use.
