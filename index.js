@@ -8,12 +8,12 @@ const argv = minimist(process.argv.slice(2))
 
 let prompt = argv._[0]
 const count = argv.count || 3
-const model = argv.model || 'stability-ai/stable-diffusion-3'
+const model = argv.model || 'black-forest-labs/flux-schnell'
 const subject = argv.subject
 const outputDir = argv.outputdir || '.'
 
 if (!prompt && !subject) {
-  console.log('Usage: aimg <prompt> [--count 3] [--model stability-ai/stable-diffusion-3] [--subject <subject>] [--outputdir output-<timestamp>]')
+  console.log('Usage: aimg <prompt> [--count 3] [--model black-forest-labs/flux-schnell] [--subject <subject>] [--outputdir output-<timestamp>]')
   process.exit()
 }
 

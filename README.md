@@ -7,7 +7,7 @@ A Node.js CLI for generating AI images with Replicate and saving them to disk.
 ## Features
 
 - Easy to install and use.
-- Supports multiple models like [Flux](https://replicate.com/blog/flux-state-of-the-art-image-generation) and [SD3](https://replicate.com/stability-ai/stable-diffusion-3).
+- Supports multiple models like [Flux](https://replicate.com/blog/flux-state-of-the-art-image-generation) and [SD3](https://replicate.com/stability-ai/stable-diffusion-3). Default is [Flux Schnell](https://replicate.com/black-forest-labs/flux-schnell).
 - Saves all the files to disk for you.
 - Includes prediction id and a slug of the prompt in the filename.
 - Lets you specify an exact prompt, or specify a subject and roll the dice with random [promptmaker](https://npm.im/promptmaker) prompts.
@@ -44,10 +44,12 @@ aimg "$(cat prompt.md)"
 
 ## Different model
 
-You don't have to use SD3. Here's an example using [Flux Schnell](https://replicate.com/blog/flux-state-of-the-art-image-generation), the new state-of-the-art image generation model for the creators of Stable Diffusion:
+The default model is [Flux Schnell](https://replicate.com/blog/flux-state-of-the-art-image-generation), the new state-of-the-art image generation model for the creators of Stable Diffusion.
+
+If you want to use a different model, specify it with the `--model` option. Here's an example using SD3:
 
 ```
-aimg "cute cat" --model "black-forest-labs/flux-schnell"
+aimg "cute cat" --model "stability-ai/stable-diffusion-3"
 ```
 
 ### More images
