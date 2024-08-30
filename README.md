@@ -7,7 +7,7 @@ A Node.js CLI for generating AI images with Replicate and saving them to disk.
 ## Features
 
 - Easy to install and use.
-- Supports multiple models like [Flux](https://replicate.com/blog/flux-state-of-the-art-image-generation) and [SD3](https://replicate.com/stability-ai/stable-diffusion-3). Default is [Flux Schnell](https://replicate.com/black-forest-labs/flux-schnell).
+- Supports any model on Replicate that has a `prompt` input. Default is [Flux Schnell](https://replicate.com/black-forest-labs/flux-schnell).
 - Saves all the files to disk for you.
 - Includes prediction id and a slug of the prompt in the filename.
 - Lets you specify an exact prompt, or specify a subject and roll the dice with random [promptmaker](https://npm.im/promptmaker) prompts.
@@ -18,7 +18,7 @@ A Node.js CLI for generating AI images with Replicate and saving them to disk.
 npm i -g aimg
 ```
 
-The grab a [Replicate API token](https://replicate.com/account/api-tokens) and set it in your environment:
+Then grab a [Replicate API token](https://replicate.com/account/api-tokens) and set it in your environment:
 
 ```
 export REPLICATE_API_TOKEN="r8_..."
@@ -44,12 +44,26 @@ aimg "$(cat prompt.md)"
 
 ## Different model
 
-The default model is [Flux Schnell](https://replicate.com/blog/flux-state-of-the-art-image-generation), the new state-of-the-art image generation model for the creators of Stable Diffusion.
-
-If you want to use a different model, specify it with the `--model` option. Here's an example using SD3:
+The default model is [Flux Schnell](https://replicate.com/blog/flux-state-of-the-art-image-generation), but you can specify any model with the `--model` option.
 
 ```
-aimg "cute cat" --model "stability-ai/stable-diffusion-3"
+aimg "cute cat" --model bytedance/sdxl-lightning-4step
+```
+
+This will work for any model on Replicate that takes a `prompt` as input and outputs a list of URLs.
+
+Examples:
+
+- [`black-forest-labs/flux-dev`](https://replicate.com/black-forest-labs/flux-dev)
+- [`bytedance/sdxl-lightning-4step`](https://replicate.com/bytedance/sdxl-lightning-4step)
+- [`stability-ai/stable-diffusion-3`](https://replicate.com/stability-ai/stable-diffusion-3)
+- [`zeke/ziki-flux`](https://replicate.com/zeke/ziki-flux) ← works for [Flux fine-tunes](https://replicate.com/collections/flux-fine-tunes) too!
+- [more...](https://replicate.com/collections/text-to-image)
+
+The latest version of the model is used unless you specify a version in the format `{owner}/{name}:{version}`:
+
+```
+aimg "cute cat" --model zeke/ziki-flux:dadc276a9062240e68f110ca06521752f334777a94f031feb0ae78ae3edca58e
 ```
 
 ### More images
