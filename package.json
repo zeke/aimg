@@ -16,7 +16,7 @@
   "dependencies": {
     "dotenv": "^16.4.1",
     "download": "^8.0.0",
-    "media-provenance": "^1.0.0",
+    "media-provenance": "^1.0.1",
     "minimist": "^1.2.8",
     "promptmaker": "^1.1.0",
     "replicate": "^0.30.2",
