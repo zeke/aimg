@@ -75,6 +75,14 @@ If you want more images, use the `--count` option:
 aimg "cute cat" --count 20
 ```
 
+## Extra flags as inputs to the model
+
+Any extra flags you pass will be passed along to the model as input. For example, if the model takes an `output_format` input, you can pass it like this:
+
+```
+aimg "cute cat" --output_format jpg
+```
+
 ### Random prompts
 
 If you want generate a different semi-random prompt for each image, specify a `subject` and it will use [promptmaker](https://npm.im/promptmaker) to generate random prompts:
