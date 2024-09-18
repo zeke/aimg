@@ -11,6 +11,7 @@ A Node.js CLI for generating AI images with Replicate and saving them to disk.
 - Saves all the files to disk for you.
 - Includes prediction id and a slug of the prompt in the filename.
 - Lets you specify an exact prompt, or specify a subject and roll the dice with random [promptmaker](https://npm.im/promptmaker) prompts.
+- Automatically adds [MediaProvenance](https://github.com/zeke/media-provenance) EXIF metadata to the downloaded image files so you have a record of the model, input, output, etc.
 
 ## Installation
 
