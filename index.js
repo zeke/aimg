@@ -13,7 +13,7 @@ const subject = argv.subject
 const outputDir = argv.outputdir || '.'
 
 if (!prompt && !subject) {
-  console.log('Usage: aimg <prompt> [--count 3] [--model black-forest-labs/flux-schnell] [--subject <subject>] [--outputdir output-<timestamp>]')
+  console.log('Usage: aimg <prompt> [--count 3] [--model black-forest-labs/flux-schnell] [--subject <subject>] [--outputdir output-<timestamp>] [--<flag> <value>...]')
   process.exit()
 }
 
@@ -25,5 +25,14 @@ for (let i = 0; i < count; i++) {
     prompt = promptmaker({ subject })
   }
 
-  run({ model, prompt, outputDir })
+  const input = { prompt }
+
+  // Add arbitrary CLI flags to the input object
+  for (const [key, value] of Object.entries(argv)) {
+    if (!['_', 'count', 'model', 'subject', 'outputdir'].includes(key)) {
+      input[key] = value
+    }
+  }
+
+  run({ model, input, outputDir })
 }
