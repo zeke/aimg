@@ -7,7 +7,7 @@ A Node.js CLI for generating AI images with Replicate and saving them to disk.
 ## Features
 
 - Easy to install and use.
-- Supports any model on Replicate that has a `prompt` input. Default is [Flux Schnell](https://replicate.com/black-forest-labs/flux-schnell).
+- Supports any model on Replicate that has a `prompt` input. Default is [Nano Banana 2](https://replicate.com/google/nano-banana-2).
 - Saves all the files to disk for you.
 - Includes prediction id and a slug of the prompt in the filename.
 - Lets you specify an exact prompt, or specify a subject and roll the dice with random [promptmaker](https://npm.im/promptmaker) prompts.
@@ -46,7 +46,7 @@ aimg "$(cat prompt.md)"
 
 ## Different model
 
-The default model is [Flux Schnell](https://replicate.com/blog/flux-state-of-the-art-image-generation), but you can specify any model with the `--model` option.
+The default model is [Nano Banana 2](https://replicate.com/google/nano-banana-2), but you can specify any model with the `--model` option.
 
 ```
 aimg "cute cat" --model bytedance/sdxl-lightning-4step
@@ -113,5 +113,5 @@ aimg --subject "pink cat" --count 100 --outputdir "pink-cat"
 ## Options
 
 - `--count`: Number of images to generate. Defaults to 3
-- `--model`: Model to use. Defaults to [stability-ai/stable-diffusion-3](https://replicate.com/stability-ai/stable-diffusion-3)
+- `--model`: Model to use. Defaults to [google/nano-banana-2](https://replicate.com/google/nano-banana-2)
 - `--subject`: Subject to pass into [promptmaker](https://npm.im/promptmaker) to generate random prompts
